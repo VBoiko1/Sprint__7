@@ -28,7 +28,7 @@ public class BaseCourierTest {
         }
     }
     @Step("Создание курьера")
-    public Response creatCreateСourier(CreateСourier courier) {
+    public Response createCreateCourier(CreateСourier courier) {
         return given()
                 .header("Content-type", "application/json")
                 .body(courier)

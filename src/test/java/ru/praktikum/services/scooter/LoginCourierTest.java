@@ -19,7 +19,7 @@ public class LoginCourierTest extends BaseCourierTest {
     void successfulAuthorizationTest() {
         //Создание курьера
         CreateСourier courier = new CreateСourier("Avtotester", "qwerty", "Anna");
-        Response createResponse = creatCreateСourier(courier);
+        Response createResponse = createCreateCourier(courier);
         verifyResponseStatusCode(createResponse, 201);
         verifyResponseBody(createResponse, true);
         //Авторизация и проверки
@@ -32,10 +32,10 @@ public class LoginCourierTest extends BaseCourierTest {
     }
     @Test
     @DisplayName("Проверка авторизации без обязательный  полей")
-    void sfdsfsvfd(){
+    void testCourierAuthorizationWithMissingRequiredFields(){
         //Создание курьера
         CreateСourier courier = new CreateСourier("Kamaz","zxc","Bob");
-        Response response = creatCreateСourier(courier);
+        Response response = createCreateCourier(courier);
         verifyResponseStatusCode(response,201);
         verifyResponseBody(response,true);
         getCourierIdForCleanup(courier.getLogin(), courier.getPassword());
